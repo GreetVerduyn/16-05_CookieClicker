@@ -1,3 +1,40 @@
+body {
+  background-image: url("./../Media/whereAreMyDamnCookies.jpg");
+  background-repeat: no-repeat;
+}
+body .main {
+  margin-top: 300px;
+  margin-left: 35px;
+}
+body .counterplace {
+  margin-left: 350px;
+  margin-bottom: 100px;
+}
 
+#auto-clicker {
+  background-color: dodgerblue;
+  border-color: dodgerblue;
+  margin: 10px;
+}
+
+#bonus {
+  background-color: skyblue;
+  border-color: skyblue;
+  margin: 10px;
+}
+
+#mulitplier {
+  background-color: deepskyblue;
+  border-color: deepskyblue;
+  margin: 10px;
+}
+
+#counter {
+  background-color: orange;
+  border-color: orange;
+  height: 175px;
+  width: 175px;
+  border-radius: 50%;
+}
 
 /*# sourceMappingURL=styles.css.map */

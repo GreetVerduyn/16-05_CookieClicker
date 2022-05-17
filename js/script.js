@@ -19,27 +19,24 @@
     bonusButton.disabled = true;
 
     counterButton.innerHTML = count.toString();
-    multiplierButton.innerHTML = ` you get ${amountToAdd} cookie per click,
-    buy multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
+    multiplierButton.innerHTML = "multiplier" //` you get ${amountToAdd} cookie per click,
+    //buy multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
 
-    function enableButtons() {
+    function statusButtons(){
         if (count>= priceMultiplier) {
             multiplierButton.disabled = false;
+        } else {
+            multiplierButton.disabled = true;
         }
         if (count>= priceAutoClicker) {
             autoClicker.disabled = false;
-        }
-        if (count>= priceBonus) {
-            bonusButton.disabled = false;
-        }
-    }function disableButtons() {
-        if (count< priceMultiplier) {
-            multiplierButton.disabled = true;
-        }
-        if (count< priceAutoClicker) {
+        } else {
             autoClicker.disabled = true;
         }
-        if (count< priceBonus) {
+        if (count>= priceBonus && !isBonusActive) {
+            bonusButton.disabled = false;
+            console.log("Bonus :" +  isBonusActive);
+        } else {
             bonusButton.disabled = true;
         }
     }
@@ -51,12 +48,12 @@
             count = count + amountToAdd;
         }
         counterButton.innerHTML = count;
-        enableButtons()
-        disableButtons()
+        statusButtons()
     }
 
     counterButton.addEventListener("click", function () {
         counterClick();
+        statusButtons()
     });
 
 
@@ -67,8 +64,8 @@
             count = count - priceMultiplier;
             counterButton.innerHTML = count;
             priceMultiplier = priceMultiplier * 3;
-            multiplierButton.innerHTML = ` you get ${amountToAdd} cookies per click,
-    buy new multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
+            multiplierButton.innerHTML = "multiplier" //`you get ${amountToAdd} cookies per click,
+    //buy new multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
 
         } else {
             alert("you don't have enough cookies to buy this")
@@ -80,11 +77,13 @@
         if (count >= priceAutoClicker && isAutoClicker === false) {
             count = count - priceAutoClicker;
             counterButton.innerHTML = count;
+            priceAutoClicker= priceAutoClicker*3
             setInterval(function () {
                 counterClick();
-            }, 1000);
+            }, 2000);
             isAutoClicker = true;
         }
+        statusButtons()
     });
 
     bonusButton.addEventListener("click", function () {
@@ -92,6 +91,7 @@
             isBonusActive = true;
             count = count - priceBonus;
             counterButton.innerHTML = count;
+            priceBonus = priceBonus*3;
             let timer = 30;
             setInterval(function () {
                 if (timer > 0) {
@@ -101,11 +101,12 @@
             }, 1000);
 
             setTimeout(function () {
-                    isBonusActive = false;
                 bonusButton.innerHTML = "Bonus";
+                isBonusActive = false
+                statusButtons()
                 }, 30000
             );
-
+        statusButtons()
         }
     });
 
