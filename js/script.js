@@ -13,6 +13,9 @@
     let multiplierButton = document.getElementById("mulitplier");
     let autoClicker = document.getElementById("auto-clicker");
     let bonusButton = document.getElementById("bonus");
+    let cookieMonsterText = document.getElementById("cookiemonsterText");
+
+
 
     multiplierButton.disabled = true;
     autoClicker.disabled = true;
@@ -52,7 +55,9 @@
             count = count + amountToAdd;
         }
         counterButton.innerHTML = count;
-        statusButtons()
+        statusButtons();
+
+
     }
 
     counterButton.addEventListener("click", function () {
@@ -80,7 +85,8 @@
         if (count >= priceAutoClicker && isAutoClicker === false) {
             count = count - priceAutoClicker;
             counterButton.innerHTML = count;
-            priceAutoClicker= priceAutoClicker*3
+            priceAutoClicker= priceAutoClicker*3;
+
             setInterval(function () {
                 counterClick();
             }, 2000);
@@ -97,6 +103,7 @@
             counterButton.innerHTML = count;
             priceBonus = priceBonus*3;
             let timer = 30;
+            cookieMonsterText.style.opacity = '0.5';
             setInterval(function () {
                 if (timer > 0) {
                     timer = timer - 1;
@@ -106,7 +113,8 @@
 
             setTimeout(function () {
                 bonusButton.innerHTML = "Bonus";
-                isBonusActive = false
+                isBonusActive = false;
+                cookieMonsterText.style.opacity = '0';
                 statusButtons()
                 }, 30000);
 
