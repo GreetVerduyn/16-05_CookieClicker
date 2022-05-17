@@ -1,6 +1,11 @@
+
+
 body {
   background-image: url("./../Media/whereAreMyDamnCookies.jpg");
   background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+}
   .main {
     margin-top: 300px;
     margin-left: 35px;
@@ -9,31 +14,65 @@ body {
   .counterplace {
     margin-left: 350px;
     margin-bottom: 100px;
+    margin-top: 400px;
+  }
+  .extras{
+    margin-left: 50px;
+
+    button {
+      width: 150px;
+      height: 75px;
+      border-radius: 20px;
+      font-size: 22px;
+    }
+
+
+
   }
 
 
- }
+  #auto-clicker {
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+    margin: 10px;
+    color: white;
 
-#auto-clicker{
-  background-color: dodgerblue;
-  border-color: dodgerblue;
-  margin: 10px;
+    &:disabled{
+      cursor: auto;
+      opacity: .5;
+    }
   }
-#bonus{
-  background-color: skyblue;
-  border-color: skyblue;
-  margin: 10px;
-}
-#mulitplier{
-  background-color:deepskyblue;
-  border-color: deepskyblue;
-  margin: 10px;
-}
 
-#counter {
-  background-color: orange;
-  border-color: orange;
-  height: 175px;
-  width: 175px;
-  border-radius: 50%;
-}
+  #bonus {
+    background-color: skyblue;
+    border-color: skyblue;
+    margin: 10px;
+    color: white;
+
+    &:disabled {
+      cursor: auto;
+      opacity: .5;
+    }
+  }
+
+  #mulitplier {
+    background-color: deepskyblue;
+    border-color: deepskyblue;
+    margin: 10px;
+    color: ghostwhite;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: auto;
+      opacity: .5;
+    }
+  }
+
+  #counter {
+    background-color: orange;
+    border-color: orange;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    font-size: 40px;
+  }

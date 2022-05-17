@@ -67,8 +67,6 @@
             multiplierButton.innerHTML = "multiplier" //`you get ${amountToAdd} cookies per click,
     //buy new multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
 
-        } else {
-            alert("you don't have enough cookies to buy this")
         }
     });
 
