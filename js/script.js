@@ -3,10 +3,10 @@
 // counter button
     var count = 0;
     let amountToAdd = 1;
-    let priceMultiplier = 15;
+    let priceMultiplier = 20;
     let priceAutoClicker = 100;
     let isAutoClicker = false;
-    let priceBonus = 12;
+    let priceBonus = 500;
     let isBonusActive = false;
 
     let counterButton = document.getElementById("counter");
@@ -19,8 +19,12 @@
     bonusButton.disabled = true;
 
     counterButton.innerHTML = count.toString();
-    multiplierButton.innerHTML = "multiplier" //` you get ${amountToAdd} cookie per click,
-    //buy multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
+    multiplierButton.innerHTML = "multiplier"
+    document.getElementById("textCounter").innerHTML = `you get ${amountToAdd} cookie per click`;
+    document.getElementById("textMultiplier").innerHTML = `buy multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
+    document.getElementById("textAutoClicker").innerHTML = `buy an auto-clicker (${priceAutoClicker} cookies) to eat some more cookies`;
+    document.getElementById("textBonusButton").innerHTML = `for ${priceBonus} coockies, you can eat twice as much during 30 seconds`;
+
 
     function statusButtons(){
         if (count>= priceMultiplier) {
@@ -64,8 +68,9 @@
             count = count - priceMultiplier;
             counterButton.innerHTML = count;
             priceMultiplier = priceMultiplier * 3;
-            multiplierButton.innerHTML = "multiplier" //`you get ${amountToAdd} cookies per click,
-    //buy new multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
+            multiplierButton.innerHTML = "multiplier"
+            document.getElementById("textCounter").innerHTML = `you get ${amountToAdd} cookies per click`;
+            document.getElementById("textMultiplier").innerHTML = `buy new multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
 
         }
     });
@@ -82,6 +87,7 @@
             isAutoClicker = true;
         }
         statusButtons()
+        document.getElementById("textAutoClicker").innerHTML = `buy another auto-clicker (${priceAutoClicker} cookies) to eat even more cookies`;
     });
 
     bonusButton.addEventListener("click", function () {
@@ -102,9 +108,11 @@
                 bonusButton.innerHTML = "Bonus";
                 isBonusActive = false
                 statusButtons()
-                }, 30000
-            );
-        statusButtons()
+                }, 30000);
+
+        statusButtons();
+        document.getElementById("textBonusButton").innerHTML = `for ${priceBonus} coockies, you can eat twice as much during 30 seconds`;
+
         }
     });
 

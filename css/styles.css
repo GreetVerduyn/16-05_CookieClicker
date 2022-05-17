@@ -9,15 +9,22 @@ body {
   margin-top: 300px;
   margin-left: 35px;
 }
-
-.counterplace {
+.main .counterplace {
   margin-left: 350px;
   margin-bottom: 100px;
   margin-top: 400px;
 }
+.main .counterplace #textCounter {
+  color: white;
+}
 
 .extras {
+  color: white;
   margin-left: 50px;
+}
+.extras .textButtons {
+  margin-top: auto;
+  margin-bottom: 10px;
 }
 .extras button {
   width: 150px;
