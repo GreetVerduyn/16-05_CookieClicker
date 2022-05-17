@@ -86,13 +86,11 @@
             count = count - priceAutoClicker;
             counterButton.innerHTML = count;
             priceAutoClicker= priceAutoClicker*3;
-
             setInterval(function () {
                 counterClick();
             }, 2000);
-            isAutoClicker = true;
         }
-        statusButtons()
+        statusButtons();
         document.getElementById("textAutoClicker").innerHTML = `buy another auto-clicker (${priceAutoClicker} cookies) to eat even more cookies`;
     });
 
