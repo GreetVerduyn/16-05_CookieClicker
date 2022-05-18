@@ -5,7 +5,7 @@
     let priceMultiplier = 20;
     let priceAutoClicker = 100;
     let isAutoClicker = false;
-    let priceBonus = 50;
+    let priceBonus = 500;
     let isBonusActive = false;
 
     let counterButton = document.getElementById("counter");
