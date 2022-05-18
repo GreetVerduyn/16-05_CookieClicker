@@ -37,30 +37,27 @@ count =  count - priceMultiplier
 adapt inner HTML
 
 .Step 7: display multiplier counter
-Display the counter within the multiplier. For example, if the counter is worth
-_5_, then the button should display something like _multiplier x5_.
+adapt innerHTML
 
 .Step 8: increase the cost
-Buying a lot of multiplier is way too easy. For more fun, make it so that each
-time a multiplier is purchased the cost of buying a new one is increased.
+price = price x 2 after you click the button
 
 .Step 9: display the cost
-In the text of the multiplier button you should also have the price of the
-upgrade.
+adapt inner HTML
 
 .Step 10: auto-clicker
-Implement a new improvement to buy, the _auto-click_. As the name might suggest
-this bonus will automatically add a click to your score each _x_ seconds.
+setInterval counterClick every 2 sec.
 
 .Step 11: bonus
-Implement yet another improvement to buy, the _bonus_. It should grant the
-player a boost in score of _200%_ per click for _30 seconds_. When purchased the
-player should see a timer with the remaining time inside the bonus button.
+set interval timer 30 sec., during this, timer is in innerHTTML
+forgot to put it back on bonus, so changed it with if, ELSE
 
 .Step 12: deactivate the buttons
-Make it so that, if the player doesn't have the points to purchase a multiplier,
-an auto-click or an other bonus, he can't.
+boolean disabled + function statusButtons
 
 .Step 13: make it pretty
-Your cookie clicker must be pretty, make it look good with CSS or some extra
-JavaScript.
+SCSS, I didn't know anymore how to use, so I checked my earlier exercise. 
+ styling and placing the buttons  - colors, rounded corners, 
+ background black because picture is too small
+ change the buttons opacity
+
