@@ -1,29 +1,32 @@
+$autoClickerColor: dodgerblue;
+$textColor:white;
+$backgroundColor: black;
+
 
 body {
   background-image: url("./../Media/whereAreMyDamnCookies.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: black;
+  background-color: $backgroundColor;
 }
 
 .main {
   margin-top: 300px;
   margin-left: 35px;
 
-  .counterplace {
+  .counterPlace {
     margin-left: 350px;
     margin-bottom: 100px;
     margin-top: 400px;
 
     #textCounter {
-      color: white;
+      color: $textColor;
     }
   }
 }
 
-
 .extras {
-  color: white;
+  color: $textColor;
   margin-left: 50px;
 
   .textButtons {
@@ -37,15 +40,14 @@ body {
     border-radius: 20px;
     font-size: 22px;
   }
-
 }
 
 
 #auto-clicker {
-  background-color: dodgerblue;
-  border-color: dodgerblue;
+  background-color: $autoClickerColor;
+  border-color: $autoClickerColor;
   margin: 10px;
-  color: white;
+  color: $textColor;
 
   &:disabled {
     cursor: auto;
@@ -57,7 +59,7 @@ body {
   background-color: skyblue;
   border-color: skyblue;
   margin: 10px;
-  color: white;
+  color: $textColor;
 
   &:disabled {
     cursor: auto;
@@ -69,7 +71,7 @@ body {
   background-color: deepskyblue;
   border-color: deepskyblue;
   margin: 10px;
-  color: ghostwhite;
+  color: $textColor;
   cursor: pointer;
 
   &:disabled {

@@ -1,6 +1,5 @@
 (function () {
 
-// counter button
     var count = 0;
     let amountToAdd = 1;
     let priceMultiplier = 20;
@@ -15,14 +14,12 @@
     let bonusButton = document.getElementById("bonus");
     let cookieMonsterText = document.getElementById("cookiemonsterText");
 
-
-
     multiplierButton.disabled = true;
     autoClicker.disabled = true;
     bonusButton.disabled = true;
 
     counterButton.innerHTML = count.toString();
-    multiplierButton.innerHTML = "multiplier"
+    multiplierButton.innerHTML = `Multiplier`
     document.getElementById("textCounter").innerHTML = `you get ${amountToAdd} cookie per click`;
     document.getElementById("textMultiplier").innerHTML = `buy multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
     document.getElementById("textAutoClicker").innerHTML = `buy an auto-clicker (${priceAutoClicker} cookies) to eat some more cookies`;
@@ -56,16 +53,12 @@
         }
         counterButton.innerHTML = count;
         statusButtons();
-
-
     }
 
     counterButton.addEventListener("click", function () {
         counterClick();
         statusButtons()
     });
-
-
 
     multiplierButton.addEventListener("click", function () {
         if (count >= priceMultiplier) {
@@ -79,7 +72,6 @@
 
         }
     });
-
 
     autoClicker.addEventListener("click", function () {
         if (count >= priceAutoClicker && isAutoClicker === false) {
@@ -106,7 +98,8 @@
                 if (timer > 0) {
                     timer = timer - 1;
                     bonusButton.innerHTML = timer;
-                }
+                } else { bonusButton.innerHTML = "bonus"};
+
             }, 1000);
 
             setTimeout(function () {
@@ -118,9 +111,7 @@
 
         statusButtons();
         document.getElementById("textBonusButton").innerHTML = `for ${priceBonus} coockies, you can eat twice as much during 30 seconds`;
-
         }
     });
-
 
 })()

@@ -9,12 +9,12 @@ body {
   margin-top: 300px;
   margin-left: 35px;
 }
-.main .counterplace {
+.main .counterPlace {
   margin-left: 350px;
   margin-bottom: 100px;
   margin-top: 400px;
 }
-.main .counterplace #textCounter {
+.main .counterPlace #textCounter {
   color: white;
 }
 
@@ -59,7 +59,7 @@ body {
   background-color: deepskyblue;
   border-color: deepskyblue;
   margin: 10px;
-  color: ghostwhite;
+  color: white;
   cursor: pointer;
 }
 #mulitplier:disabled {
