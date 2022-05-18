@@ -19,8 +19,7 @@
     bonusButton.disabled = true;
 
     counterButton.innerHTML = count.toString();
-    multiplierButton.innerHTML += `multiplier`;
-    multiplierButton.innerHTML += `(${amountToAdd*2} cookies)`;
+    multiplierButton.innerHTML = `multiplier` + `<br> (${amountToAdd * 2} cookies)`;
     document.getElementById("textCounter").innerHTML = `you get ${amountToAdd} cookie per click`;
     document.getElementById("textMultiplier").innerHTML = `buy multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
     document.getElementById("textAutoClicker").innerHTML = `buy an auto-clicker (${priceAutoClicker} cookies) to eat some more cookies`;
@@ -67,8 +66,7 @@
             count = count - priceMultiplier;
             counterButton.innerHTML = count;
             priceMultiplier = priceMultiplier * 3;
-            multiplierButton.innerHTML += `multiplier`;
-            multiplierButton.innerHTML += `(${amountToAdd*2} cookies)`;
+            multiplierButton.innerHTML = `multiplier <br> (${amountToAdd*2} cookies)`;
             document.getElementById("textCounter").innerHTML = `you get ${amountToAdd} cookies per click`;
             document.getElementById("textMultiplier").innerHTML = `buy new multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
 
