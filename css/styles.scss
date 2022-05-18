@@ -1,6 +1,9 @@
 $autoClickerColor: dodgerblue;
 $textColor:white;
 $backgroundColor: black;
+$multiplierButtonColor:deepskyblue;
+$counterButtonColor: orange;
+$bonusButtonColor: skyblue;
 
 
 body {
@@ -56,8 +59,8 @@ body {
 }
 
 #bonus {
-  background-color: skyblue;
-  border-color: skyblue;
+  background-color: $bonusButtonColor;
+  border-color: $bonusButtonColor;
   margin: 10px;
   color: $textColor;
 
@@ -68,8 +71,8 @@ body {
 }
 
 #mulitplier {
-  background-color: deepskyblue;
-  border-color: deepskyblue;
+  background-color:$multiplierButtonColor;
+  border-color: $multiplierButtonColor;
   margin: 10px;
   color: $textColor;
   cursor: pointer;
@@ -81,8 +84,8 @@ body {
 }
 
 #counter {
-  background-color: orange;
-  border-color: orange;
+  background-color: $counterButtonColor;
+  border-color: $counterButtonColor;
   height: 200px;
   width: 200px;
   border-radius: 50%;

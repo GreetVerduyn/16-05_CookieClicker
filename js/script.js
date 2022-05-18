@@ -5,7 +5,7 @@
     let priceMultiplier = 20;
     let priceAutoClicker = 100;
     let isAutoClicker = false;
-    let priceBonus = 500;
+    let priceBonus = 50;
     let isBonusActive = false;
 
     let counterButton = document.getElementById("counter");
@@ -26,20 +26,20 @@
     document.getElementById("textBonusButton").innerHTML = `for ${priceBonus} coockies, you can eat twice as much during 30 seconds`;
 
 
-    function statusButtons(){
-        if (count>= priceMultiplier) {
+    function statusButtons() {
+        if (count >= priceMultiplier) {
             multiplierButton.disabled = false;
         } else {
             multiplierButton.disabled = true;
         }
-        if (count>= priceAutoClicker) {
+        if (count >= priceAutoClicker) {
             autoClicker.disabled = false;
         } else {
             autoClicker.disabled = true;
         }
-        if (count>= priceBonus && !isBonusActive) {
+        if (count >= priceBonus && !isBonusActive) {
             bonusButton.disabled = false;
-            console.log("Bonus :" +  isBonusActive);
+            console.log("Bonus :" + isBonusActive);
         } else {
             bonusButton.disabled = true;
         }
@@ -66,7 +66,7 @@
             count = count - priceMultiplier;
             counterButton.innerHTML = count;
             priceMultiplier = priceMultiplier * 3;
-            multiplierButton.innerHTML = `multiplier <br> (${amountToAdd*2} cookies)`;
+            multiplierButton.innerHTML = `multiplier <br> (${amountToAdd * 2} cookies)`;
             document.getElementById("textCounter").innerHTML = `you get ${amountToAdd} cookies per click`;
             document.getElementById("textMultiplier").innerHTML = `buy new multiplier (${priceMultiplier} cookies) to have ${amountToAdd * 2} cookies per click`;
 
@@ -77,7 +77,7 @@
         if (count >= priceAutoClicker && isAutoClicker === false) {
             count = count - priceAutoClicker;
             counterButton.innerHTML = count;
-            priceAutoClicker= priceAutoClicker*3;
+            priceAutoClicker = priceAutoClicker * 3;
             setInterval(function () {
                 counterClick();
             }, 2000);
@@ -91,15 +91,17 @@
             isBonusActive = true;
             count = count - priceBonus;
             counterButton.innerHTML = count;
-            priceBonus = priceBonus*3;
+            priceBonus = priceBonus * 3;
             let timer = 30;
             cookieMonsterText.style.opacity = '0.5';
             setInterval(function () {
                 if (timer > 0) {
                     timer = timer - 1;
                     bonusButton.innerHTML = timer;
-                } else { bonusButton.innerHTML = "bonus"};
-
+                    document.getElementById('counter').style.backgroundColor = 'red';
+                } else {
+                    bonusButton.innerHTML = "bonus";
+                    document.getElementById('counter').style.backgroundColor = 'orange'};
             }, 1000);
 
             setTimeout(function () {
@@ -107,10 +109,10 @@
                 isBonusActive = false;
                 cookieMonsterText.style.opacity = '0';
                 statusButtons()
-                }, 30000);
+            }, 30000);
 
-        statusButtons();
-        document.getElementById("textBonusButton").innerHTML = `for ${priceBonus} coockies, you can eat twice as much during 30 seconds`;
+            statusButtons();
+            document.getElementById("textBonusButton").innerHTML = `for ${priceBonus} coockies, you can eat twice as much during 30 seconds`;
         }
     });
 
